@@ -1,0 +1,32 @@
+#version 460
+layout(location = 0) in vec3 position;
+layout(location = 1) in vec3 normal;
+layout(location = 2) in vec2 inTexCoords;
+layout (location = 3) in vec3 inTangent;
+out vec3 worldNormal;
+out vec3 worldPosition;
+out vec2 texCoords;
+out mat3 tbn;
+uniform mat4 modelMatrix;
+uniform mat4 viewMatrix;
+uniform mat4 projectionMatrix;
+void main() {
+	gl_Position = (projectionMatrix * viewMatrix * modelMatrix) * vec4(position, 1.0f);
+	mat3 normalMat = transpose(inverse(mat3(modelMatrix)));
+    worldNormal = normalize(normalMat * normal);
+	vec4 tmpWorldPosition = modelMatrix * vec4(position, 1.0);
+	worldPosition = tmpWorldPosition.xyz / tmpWorldPosition.w; //worldPos.xyz / worldPos.w prevede do vec3, bez oreznuti 4. slozky
+	texCoords = inTexCoords;
+
+	vec3 _normal = normalize(normal);
+    vec3 _tangent = normalize(inTangent);
+    //a.b = |a||b|cos0   - uhel mezi vektory
+    _tangent = normalize(_tangent - dot(_tangent, _normal) * _normal);
+    vec3 _bitangent = cross(_normal, _tangent);
+
+    //TBN Matrix
+    vec3 T = normalize(vec3(normalMat * _tangent));
+    vec3 B = normalize(vec3(normalMat * _bitangent));
+    vec3 N = normalize(vec3(normalMat * _normal));
+    tbn = mat3(T, B, N);
+}

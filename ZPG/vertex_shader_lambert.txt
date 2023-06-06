@@ -1,0 +1,14 @@
+#version 460
+layout(location = 0) in vec3 position;
+layout(location = 1) in vec3 normal;
+out vec3 worldNormal;
+out vec3 worldPosition;
+uniform mat4 modelMatrix;
+uniform mat4 viewMatrix;
+uniform mat4 projectionMatrix;
+void main() {
+	gl_Position = (projectionMatrix * viewMatrix * modelMatrix) * vec4(position, 1.0f);
+	worldNormal = normalize(transpose(inverse(mat3(modelMatrix))) * normal);
+	vec4 tmpWorldPosition = modelMatrix * vec4(position, 1.0);
+	worldPosition = tmpWorldPosition.xyz / tmpWorldPosition.w; //worldPos.xyz / worldPos.w prevede do vec3, bez oreznuti 4. slozky
+}

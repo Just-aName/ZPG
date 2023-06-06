@@ -1,0 +1,12 @@
+#pragma once
+enum SHADERTYPE
+{
+	CONSTANT = 1,
+	LAMBERT = 2,
+	PHONG = 3,
+	BLINN = 4,
+	CONSTANT_TEXTURES = 5,
+	PHONG_TEXTURES = 6,
+	SKYBOX = 7,
+	CONSTANT_PLAIN = 8
+};

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{5bbaf581-c24f-44f7-ba0d-837a0503c59c}</ProjectGuid>
+    <RootNamespace>ZPG</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\..\libs\glew-2.1.0\include;..\..\libs\glm;..\..\libs\soil\include;..\..\libs\assimp\include;..\..\libs\glfw-3.3.4.bin.WIN32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\libs\soil\lib;..\..\libs\glew-2.1.0\lib\Release\Win32;..\..\libs\glfw-3.3.4.bin.WIN32\lib-vc2022;..\..\libs\assimp\lib\Win32\v141\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;glu32.lib;glfw3.lib;glew32.lib;soil2.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="BlinnShaderProgram.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="ConstantShaderProgram.cpp" />
+    <ClCompile Include="ConstantShaderProgramPlainModel.cpp" />
+    <ClCompile Include="ConstantShaderProgramSkyBox.cpp" />
+    <ClCompile Include="ConstantShaderProgramTexture.cpp" />
+    <ClCompile Include="Cubemap.cpp" />
+    <ClCompile Include="DirectionLight.cpp" />
+    <ClCompile Include="DrawableObject.cpp" />
+    <ClCompile Include="DrawableObjectAssimp.cpp" />
+    <ClCompile Include="DrawableObjectSkyBox.cpp" />
+    <ClCompile Include="DrawableObjectTexture.cpp" />
+    <ClCompile Include="LambertShaderProgram.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ModelAssimp.cpp" />
+    <ClCompile Include="ModelPlain.cpp" />
+    <ClCompile Include="ModelWithTexture.cpp" />
+    <ClCompile Include="PhongShaderProgram.cpp" />
+    <ClCompile Include="PhongShaderProgramAssimp.cpp" />
+    <ClCompile Include="PhongShaderProgramTexture.cpp" />
+    <ClCompile Include="PointLight.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="SceneControllerTest3.cpp" />
+    <ClCompile Include="SceneObjectController.cpp" />
+    <ClCompile Include="SceneObjectControllerForest.cpp" />
+    <ClCompile Include="SceneObjectControllerTest.cpp" />
+    <ClCompile Include="ShaderLoader.cpp" />
+    <ClCompile Include="ShaderProgram.cpp" />
+    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="SpotLight.cpp" />
+    <ClCompile Include="Subject.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Transformation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BlinnShaderProgram.h" />
+    <ClInclude Include="bushes.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="ConstantShaderProgram.h" />
+    <ClInclude Include="ConstantShaderProgramPlainModel.h" />
+    <ClInclude Include="ConstantShaderProgramSkyBox.h" />
+    <ClInclude Include="ConstantShaderProgramTexture.h" />
+    <ClInclude Include="Cubemap.h" />
+    <ClInclude Include="DirectionLight.h" />
+    <ClInclude Include="DrawableObject.h" />
+    <ClInclude Include="DrawableObjectAssimp.h" />
+    <ClInclude Include="DrawableObjectSkyBox.h" />
+    <ClInclude Include="DrawableObjectTexture.h" />
+    <ClInclude Include="gift.h" />
+    <ClInclude Include="ITexture.h" />
+    <ClInclude Include="LambertShaderProgram.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="ModelAssimp.h" />
+    <ClInclude Include="ModelPlain.h" />
+    <ClInclude Include="ModelWithTexture.h" />
+    <ClInclude Include="Observer.h" />
+    <ClInclude Include="PhongShaderProgram.h" />
+    <ClInclude Include="PhongShaderProgramAssimp.h" />
+    <ClInclude Include="PhongShaderProgramTexture.h" />
+    <ClInclude Include="plain.h" />
+    <ClInclude Include="PointLight.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="SceneControllerTest3.h" />
+    <ClInclude Include="SceneObjectController.h" />
+    <ClInclude Include="SceneObjectControllerForest.h" />
+    <ClInclude Include="SceneObjectControllerTest.h" />
+    <ClInclude Include="ShaderLoader.h" />
+    <ClInclude Include="ShaderProgram.h" />
+    <ClInclude Include="ShaderTypes.h" />
+    <ClInclude Include="skybox.h" />
+    <ClInclude Include="sphere.h" />
+    <ClInclude Include="SpotLight.h" />
+    <ClInclude Include="Subject.h" />
+    <ClInclude Include="suzi_flat.h" />
+    <ClInclude Include="suzi_smooth.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Transformation.h" />
+    <ClInclude Include="tree.h" />
+    <ClInclude Include="VertexData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="fragment_shader_blinn.txt" />
+    <Text Include="fragment_shader_constant.txt" />
+    <Text Include="fragment_shader_constant_plain_model.txt" />
+    <Text Include="fragment_shader_constant_texture.txt" />
+    <Text Include="fragment_shader_lambert.txt" />
+    <Text Include="fragment_shader_phong.txt" />
+    <Text Include="fragment_shader_phong_assimp.txt" />
+    <Text Include="fragment_shader_phong_texture.txt" />
+    <Text Include="fragment_shader_skybox.txt" />
+    <Text Include="vertex_shader_blinn.txt" />
+    <Text Include="vertex_shader_constant.txt" />
+    <Text Include="vertex_shader_constant_plain_model.txt" />
+    <Text Include="vertex_shader_constant_texture.txt" />
+    <Text Include="vertex_shader_lambert.txt" />
+    <Text Include="vertex_shader_phong.txt" />
+    <Text Include="vertex_shader_phong_assimp.txt" />
+    <Text Include="vertex_shader_phong_texture.txt" />
+    <Text Include="vertex_shader_skybox.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="grass.png" />
+    <Image Include="negx.jpg" />
+    <Image Include="negy.jpg" />
+    <Image Include="negz.jpg" />
+    <Image Include="posx.jpg" />
+    <Image Include="posy.jpg" />
+    <Image Include="posz.jpg" />
+    <Image Include="wooden_fence.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
